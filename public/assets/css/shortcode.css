@@ -501,7 +501,7 @@ ul.social-networks li a i {
 }
 
 .one-half {
-	  float: left;
+  float: left;
   margin-right: 15%;
   position: relative;
 }
@@ -1164,14 +1164,14 @@ hr {
   border-bottom: none;
 }
 .tm-iconlist.tm-style1 li .iconlist-icon {
-    width: 60px;
-    height: 60px;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    float: left;
-    background: rgb(151, 128, 102);
-    border-radius: 60px;
-    margin: 5px 10px 20px 0px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  float: left;
+  background: rgb(151, 128, 102);
+  border-radius: 60px;
+  margin: 5px 10px 20px 0px;
 }
 .tm-iconlist.tm-style1 li .iconlist-icon i {
   font-size: 28px;
@@ -1417,8 +1417,28 @@ hr {
   left: 0;
   bottom: 0;
   right: 0;
-  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, rgba(255, 255, 255, 0.2)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.2)), color-stop(0.75, rgba(255, 255, 255, 0.2)), color-stop(0.75, transparent), to(transparent));
-  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    100% 100%,
+    color-stop(0.25, rgba(255, 255, 255, 0.2)),
+    color-stop(0.25, transparent),
+    color-stop(0.5, transparent),
+    color-stop(0.5, rgba(255, 255, 255, 0.2)),
+    color-stop(0.75, rgba(255, 255, 255, 0.2)),
+    color-stop(0.75, transparent),
+    to(transparent)
+  );
+  background-image: -moz-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
   z-index: 1;
   -webkit-background-size: 50px 50px;
   -moz-background-size: 50px 50px;
@@ -1875,7 +1895,10 @@ table.tm-data-table tfoot tr td {
   border-bottom: none;
   color: #4d555a;
 }
-.tm-pricing-table.tm-style2 .pricing-table-wrap ul.tm-highlight li.tm-price-row {
+.tm-pricing-table.tm-style2
+  .pricing-table-wrap
+  ul.tm-highlight
+  li.tm-price-row {
   background: #008d71;
   margin: 0;
   border-bottom: none;
@@ -2089,7 +2112,7 @@ table.tm-data-table tfoot tr td {
   margin-bottom: 20px;
 }
 .tm-testimonial .name h3 {
-  font-size: 13px
+  font-size: 13px;
 }
 .tm-testimonial.tm-style2 .info span {
   color: #cccccc;

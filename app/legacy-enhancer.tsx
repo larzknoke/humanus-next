@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
+import { createRoot, type Root } from "react-dom/client";
+import { HomeCourses } from "./components/home-courses";
 
 type JQueryResult = { layerSlider?: (options: object) => void; hasClass?: (name: string) => boolean };
 type JQueryLike = ((selector: string | Element) => JQueryResult) & { fn?: { layerSlider?: unknown } };
@@ -8,6 +10,15 @@ declare global { interface Window { jQuery?: JQueryLike } }
 
 export function LegacyEnhancer({ home }: { home: boolean }) {
   useEffect(() => {
+    let coursesRoot: Root | undefined;
+    if (home) {
+      const mountNode = document.getElementById("home-courses-root");
+      if (mountNode) {
+        coursesRoot = createRoot(mountNode);
+        coursesRoot.render(<HomeCourses />);
+      }
+    }
+
     let attempts = 0;
     const timer = window.setInterval(() => {
       const $ = window.jQuery;
@@ -22,7 +33,10 @@ export function LegacyEnhancer({ home }: { home: boolean }) {
       document.querySelector("#duration")?.addEventListener("click", () => { const output = document.querySelector("#ausgabe"); if (output && video) output.textContent = `Die Dauer des Videos beträgt: ${video.duration} Sekunden.`; });
       window.clearInterval(timer);
     }, 50);
-    return () => window.clearInterval(timer);
+    return () => {
+      window.clearInterval(timer);
+      coursesRoot?.unmount();
+    };
   }, [home]);
   return null;
 }
