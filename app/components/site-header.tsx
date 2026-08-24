@@ -13,16 +13,23 @@ const menuItems = [
 const praxisItems = [
   { href: "/praxis", label: "Praxis humanus" },
   { href: "/kilianbegoin", label: "Kilian Begoin" },
-  { href: "/joachimtoelle", label: "Joachim T&ouml;lle" },
+  { href: "/joachimtoelle", label: "Joachim Tölle" },
   { href: "/dominiquemakris", label: "Dominique Makris-Fleer" },
-  { href: "/georgroeske", label: "Georg R&ouml;ske" },
+  { href: "/georgroeske", label: "Georg Röske" },
 ];
 
 export function SiteHeader() {
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const isAkut = pathname === "/akutversorgung" || pathname === "/akutbehandlung";
-  const isPraxis = ["/praxis", "/kilianbegoin", "/joachimtoelle", "/dominiquemakris", "/georgroeske"].includes(pathname);
+  const isAkut =
+    pathname === "/akutversorgung" || pathname === "/akutbehandlung";
+  const isPraxis = [
+    "/praxis",
+    "/kilianbegoin",
+    "/joachimtoelle",
+    "/dominiquemakris",
+    "/georgroeske",
+  ].includes(pathname);
 
   const isActive = (href: string) => {
     if (href === "/") return isHome;
@@ -37,10 +44,19 @@ export function SiteHeader() {
           <nav className="tm-nav">
             <ul className="tm-menu tm-menu-simple l_tinynav1">
               <a href="/">
-                <img style={{ padding: "10px 210px 10px 10px" }} alt="Logo" src="/assets/img/logo.jpg" />
+                <img
+                  style={{ padding: "10px 210px 10px 10px" }}
+                  alt="Logo"
+                  src="/assets/img/logo.jpg"
+                />
               </a>
               {menuItems.slice(0, 4).map((item) => (
-                <li key={item.href} className={isActive(item.href) ? "current-menu-item parent" : "parent"}>
+                <li
+                  key={item.href}
+                  className={
+                    isActive(item.href) ? "current-menu-item parent" : "parent"
+                  }
+                >
                   <a href={item.href}>{item.label}</a>
                 </li>
               ))}
@@ -48,13 +64,24 @@ export function SiteHeader() {
                 <a href="/praxis">Praxisgemeinschaft</a>
                 <ul className="sub-menu">
                   {praxisItems.map((item) => (
-                    <li key={item.href} className={pathname === item.href ? "current-menu-item" : undefined}>
+                    <li
+                      key={item.href}
+                      className={
+                        pathname === item.href ? "current-menu-item" : undefined
+                      }
+                    >
                       <a href={item.href}>{item.label}</a>
                     </li>
                   ))}
                 </ul>
               </li>
-              <li className={pathname === "/kontakt" ? "current-menu-item parent" : "parent"}>
+              <li
+                className={
+                  pathname === "/kontakt"
+                    ? "current-menu-item parent"
+                    : "parent"
+                }
+              >
                 <a href="/kontakt">Kontakt</a>
               </li>
             </ul>
