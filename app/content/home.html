@@ -101,49 +101,130 @@
     </p>
   </div>
 </div>
- <!-- Patient information section -->
-<div class="tm-row" style="padding: 50px 0; text-align: center; background: #f4f4f4;">
-   <div class="tm-wrap" style="max-width: 800px;">
-      <h2 class="tm-title">Anamnesebogen</h2>
-      <p style="line-height: 24px;">
-         Liebe Patientinnen und Patienten,
-         bitte bringen Sie zu Ihrem ersten Termin in unserer Praxis den ausgefüllten Anamnesebogen mit. So können wir wertvolle Zeit bei der Erstaufnahme sparen. Sollte dies nicht möglich sein, können Sie den Bogen selbstverständlich auch vor Ort ausfüllen.
-      </p>
-      <p>
-         <a style="font-size: 18px; text-decoration: underline; font-weight: bold;" href="/assets/Screeningbogen.pdf" target="_blank">Anamnesebogen (PDF)</a>
-      </p>
-   </div>
-</div>
-<!-- Symrise Akutversorgung Teaser -->
-<div class="tm-row" style="padding: 60px 0; background: #978066 ;">
-   <div class="tm-wrap" style="max-width: 900px;">
-      <div style="text-align: center; color: #fff;">
-         <img 
-            src="/assets/img/sym_logo.svg" 
-            alt="Humanus & Symrise" 
-            style="max-width: 280px; margin: 0 auto 30px; display: block; filter: brightness(0) invert(1);"
-            />
-         <h2 class="tm-title" style="color: #fff; font-size: 32px; margin-bottom: 20px;font-family: 'Karma', serif;">
-            Akutversorgung für Symrise-Mitarbeitende
-         </h2>
-         <p style="font-size: 18px; line-height: 1.6; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
-            Schnelle medizinisch-therapeutische Hilfe bei akuten Beschwerden – 
-            zur Vermeidung von Arbeitsausfällen und Chronifizierung.
-         </p>
-         <a
-            href="/akutversorgung" 
-            target="_blank"
-            rel="noopener noreferrer"
-            class="tm-btn"
-            style="
-            background-color: #b8cb6a;
-            line-height: 41px;
-            font-size: 20px;
-            "
-            >Zur Anmeldung ›
-         </a>
+<!-- Info and teaser cards -->
+<style>
+  .home-info-cards {
+   padding: 55px 0;
+   background: #f4f1eb;
+  }
+
+  .home-info-card-grid {
+   display: flex;
+   gap: 30px;
+   align-items: stretch;
+  }
+
+  .home-info-card {
+   width: calc(33.333% - 20px);
+   background: #fff;
+   padding: 36px 30px;
+   text-align: center;
+   box-shadow: 0 14px 35px rgba(77, 85, 90, 0.12);
+   border-top: 5px solid #978066;
+   min-height: 100%;
+  }
+
+  .home-info-card.home-info-card-accent {
+   background: #978066;
+   color: #fff;
+  }
+
+  .home-info-card.home-info-card-accent .tm-title,
+  .home-info-card.home-info-card-accent p {
+   color: #fff;
+  }
+
+  .home-info-card.home-info-card-highlight {
+   background: #fbf6ab;
+   border-top-color: #b8cb6a;
+  }
+
+  .home-info-card .tm-title {
+   margin-bottom: 18px;
+   /* font-size: 24px; 
+   font-family: 'Karma', serif; */
+  }
+
+  .home-info-card p {
+   line-height: 1.7;
+   margin-bottom: 22px;
+  }
+
+  .home-info-card-logo {
+   max-width: 180px;
+   margin: 0 auto 24px;
+   display: block;
+  }
+
+  .home-info-card-accent .home-info-card-logo {
+   filter: brightness(0) invert(1);
+  }
+
+  .home-info-card-link {
+   font-size: 18px;
+   text-decoration: underline;
+   font-weight: bold;
+  }
+
+  .home-info-card .tm-btn {
+   background-color: #b8cb6a;
+   line-height: 41px;
+   font-size: 18px;
+   display: inline-block;
+   padding: 0 24px;
+  }
+
+  @media (max-width: 900px) {
+   .home-info-card-grid {
+    flex-direction: column;
+   }
+
+   .home-info-card {
+    width: 100%;
+   }
+  }
+</style>
+<div class="tm-row home-info-cards">
+  <div class="tm-wrap">
+    <div class="home-info-card-grid">
+      <div class="home-info-card">
+        <h2 class="tm-title">Anamnesebogen</h2>
+        <p>
+          Liebe Patientinnen und Patienten, bitte bringen Sie zu Ihrem ersten Termin in unserer Praxis den ausgefüllten Anamnesebogen mit. So können wir wertvolle Zeit bei der Erstaufnahme sparen.
+        </p>
+        <p>
+          <a class="home-info-card-link" href="/assets/Screeningbogen.pdf" target="_blank">Anamnesebogen (PDF)</a>
+        </p>
       </div>
-   </div>
+      <div class="home-info-card home-info-card-accent">
+        <h2 class="tm-title" style="font-size: 24px; font-family: 'Karma', serif; line-height: 1.4">
+          Akutversorgung fur Symrise-Mitarbeitende
+        </h2>
+        <img
+          src="/assets/img/sym_logo.svg"
+          alt="Humanus & Symrise"
+          class="home-info-card-logo"
+        />
+        <p>
+          Schnelle medizinisch-therapeutische Hilfe bei akuten Beschwerden zur Vermeidung von Arbeitsausfallen und Chronifizierung.
+        </p>
+        <a
+          href="/akutversorgung"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tm-btn"
+          >Zur Anmeldung ›</a
+        >
+      </div>
+      <div class="home-info-card home-info-card-highlight">
+        <h2 class="tm-title">Kurse</h2>
+        <p>
+          Hier finden Sie bald unsere aktuellen Kurse mit kurzen Informationen zu Inhalt, Ablauf und freien Platzen.
+        </p>
+        <a class="tm-btn" href="/kontakt">Zur Anmeldung ›</a>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- Service blocks -->
 <div class="tm-row" style="padding: 50px 0 70px">
