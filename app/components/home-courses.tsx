@@ -53,6 +53,22 @@ const COURSES: Course[] = [
 export function HomeCourses() {
   return (
     <div>
+      <div
+        style={{
+          // background: "#b8cb6a",
+          borderRadius: 8,
+          padding: "14px 16px",
+          marginBottom: 16,
+          textAlign: "center",
+        }}
+      >
+        <img
+          src="/assets/humanus_gym_kombi_green_slim.svg"
+          alt="Humanus und Holistic Gym"
+          style={{ width: "100%", maxWidth: 280, height: "auto" }}
+        />
+      </div>
+
       {COURSES.map((course, index) => (
         <div
           key={course.id}
