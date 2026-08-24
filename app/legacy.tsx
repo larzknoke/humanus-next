@@ -1,5 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { SiteFooter } from "./components/site-footer";
+import { SiteHeader } from "./components/site-header";
 import { LegacyEnhancer } from "./legacy-enhancer";
 
 function getPageContent(source: string) {
@@ -7,5 +9,12 @@ function getPageContent(source: string) {
 }
 
 export function LegacyPage({ source, home = false }: { source: string; home?: boolean }) {
-  return <><div style={{ display: "contents" }} dangerouslySetInnerHTML={{ __html: getPageContent(source) }} /><LegacyEnhancer home={home} /></>;
+  return (
+    <>
+      <SiteHeader />
+      <div style={{ display: "contents" }} dangerouslySetInnerHTML={{ __html: getPageContent(source) }} />
+      <SiteFooter />
+      <LegacyEnhancer home={home} />
+    </>
+  );
 }
